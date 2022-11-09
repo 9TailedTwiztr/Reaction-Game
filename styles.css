@@ -24,8 +24,18 @@ background-color: #77797c;
 #Stopbtn {
     display: none;
 }
-
-#previous-score, #best-score {
+@media only screen and (max-device-width: 640px) {
+    #previous-score, #best-score {
+        font-size: 25px;
+        background-color: #65aef3;
+        border: 3px solid #77797c;
+        border-radius: 10px;
+        margin: 10px;
+        
+    }
+}
+@media only screen and (min-device-width: 640px) {
+    #previous-score, #best-score {
     font-size: 25px;
     display: inline;
     background-color: #65aef3;
@@ -33,7 +43,9 @@ background-color: #77797c;
     border-radius: 10px;
     margin: 20px;
     
+    }
 }
+
 
 #average {
     background-color: #65aef3;
