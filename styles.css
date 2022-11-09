@@ -57,9 +57,9 @@ background-color: #77797c;
 .col {
     float: left;
 }.right {
-    width: 10%;
+    width: 35px;
 }.left {
-    width: auto;
+    width: 100%;
 }
 .hover {
     display: none;
