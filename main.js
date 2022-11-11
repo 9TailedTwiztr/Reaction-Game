@@ -16,16 +16,16 @@ window.onload = function() {
     document.getElementById("best").innerText = localStorage.getItem("Lowest");
     console.log("Retrieved LocalStorage");
 }
-function getNewRandomColor()
-{
-    var myArray = ['red', 'green', 'blue'];    
-    var rand = myArray[Math.floor(Math.random() * myArray.length)];
-    document.getElementById("myDiv").style.backgroundColor = rand;
-}
+// function getNewRandomColor()
+// {
+//     var myArray = ['red', 'green', 'blue'];    
+//     var rand = myArray[Math.floor(Math.random() * myArray.length)];
+//     document.getElementById("myDiv").style.backgroundColor = rand;
+// }
 function startTest()
 {
     document.body.style.background=document.response.bgColorChange.options[
-document.response.bgColorChange.selectedIndex].text;
+document.response.bgColorChange.selectedIndex].text; //Chooeses the background colour from the selelection made from drop down list.
     bgChangeStarted=true;
     startTime=new Date();
 }
@@ -70,13 +70,11 @@ function stopTest()
 
         if (responseTime < parseFloat(localStorage.getItem("Lowest"))) {
             localStorage.setItem("Lowest", responseTime);
-            console.log("Changed LocalStorage \nDisplayed new LocalStorage")
+            console.log("Changed LocalStorage \nDisplayed new LocalStorage") 
+            //Changes localStorage if current score is lower than localStorage score
         }
         else {}
         document.getElementById("best").innerHTML = localStorage.getItem("Lowest");
-        
-        
-
         
     }
     else
