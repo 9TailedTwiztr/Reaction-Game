@@ -47,12 +47,14 @@ background-color: #77797c;
 }
 
 
-#average {
+#average, #remark {
     background-color: #65aef3;
     border: 3px solid #77797c;
     border-radius: 10px;
     margin: 20px;
+    padding: 5px;
     display: inline-block;
+    font-size: 20px;
 }
 
 #avtxt {

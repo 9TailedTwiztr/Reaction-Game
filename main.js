@@ -5,7 +5,6 @@ var startPressed=false;
 var bgChangeStarted=false;
 var maxWait=20;
 var timerID;
-localStorage.key = ("Best");
 if (localStorage.getItem("Best")=== null) {
     localStorage.setItem("Best", "1000");
     document.getElementById("best").innerText= "0";
@@ -32,16 +31,16 @@ document.response.bgColorChange.selectedIndex].text;
 function remark(responseTime)
 {
     var responseString="";
-    if (responseTime < 0.20)
+    if (responseTime > 0.20)
         responseString="Well done!";
-    if (responseTime >= 0.30 && responseTime < 0.20)
+    if (responseTime >= 0.20 && responseTime < 0.30)
         responseString="Nice!";
-    if (responseTime >=0.40 && responseTime < 0.30)
+    if (responseTime >=0.30 && responseTime < 0.40)
         responseString="Could be better...";
-    if (responseTime >=0.50 && responseTime < 0.60)
+    if (responseTime >=0.40 && responseTime < 0.50)
         responseString="Keep practicing!";
-    if (responseTime >=0.60 && responseTime < 1)
-        responseString="Have you been drinking?";
+    if (responseTime >=0.50 && responseTime < 1)
+        responseString="You can do better than this!";
     if (responseTime >=1)
         responseString="Did you fall asleep?";
 
@@ -55,9 +54,10 @@ function stopTest()
         endTime=new Date();
         var responseTime=(endTime.getTime()-startTime.getTime())/1000;
 
-        document.body.style.background="white";       
-        alert("Your response time is: " + responseTime +
-    " seconds " + "\n" + remark(responseTime));
+        document.body.style.background="white";
+        document.getElementById("remark").innerText=remark(responseTime);    
+    //     alert("Your response time is: " + responseTime +
+    // " seconds " + "\n" + remark(responseTime));
         startPressed=false;
         bgChangeStarted=false;
         document.getElementById("Startbtn").style.display="block";
