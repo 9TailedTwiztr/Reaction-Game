@@ -11,15 +11,17 @@ if (localStorage.getItem("Lowest")=== null) {
     console.log("Set LocalStorage as no previous value")
 }
 window.onload = function() {
+    document.querySelector(".linebreak").style.display="block";
+    document.getElementById("remark").style.display="none";    
     document.getElementById("best").innerText = localStorage.getItem("Lowest");
     console.log("Retrieved LocalStorage");
 }
-// function getNewRandomColor()
-// {
-//     var myArray = ['red', 'green', 'blue'];    
-//     var rand = myArray[Math.floor(Math.random() * myArray.length)];
-//     document.getElementById("myDiv").style.backgroundColor = rand;
-// }
+function getNewRandomColor()
+{
+    var myArray = ['red', 'green', 'blue'];    
+    var rand = myArray[Math.floor(Math.random() * myArray.length)];
+    document.getElementById("myDiv").style.backgroundColor = rand;
+}
 function startTest()
 {
     document.body.style.background=document.response.bgColorChange.options[
@@ -55,6 +57,8 @@ function stopTest()
         var responseTime=(endTime.getTime()-startTime.getTime())/1000;
 
         document.body.style.background="white";
+        document.querySelector(".linebreak").style.display="none";     
+        document.getElementById("remark").style.display="block";    
         document.getElementById("remark").innerText=remark(responseTime);    
     //     alert("Your response time is: " + responseTime +
     // " seconds " + "\n" + remark(responseTime));
@@ -84,8 +88,10 @@ function stopTest()
         else
         {       
             clearTimeout(timerID);
-            startPressed=false;             
-            alert("You pressed too early");
+            startPressed=false;
+            document.querySelector(".linebreak").style.display="none";
+            document.getElementById("remark").style.display="block";            
+            document.getElementById("remark").innerText="You pressed too early!";
             document.getElementById("Startbtn").style.display="block";
             document.getElementById("Stopbtn").style.display="none";
         }               
@@ -104,8 +110,10 @@ function randNumber()
 
 function startit()
 {
+    document.querySelector(".linebreak").style.display="block";
     document.getElementById("Startbtn").style.display="none";
     document.getElementById("Stopbtn").style.display="block";
+    document.getElementById("remark").style.display="none";
     if(startPressed)
     {
         alert("Already started. Press stop to stop");

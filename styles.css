@@ -41,7 +41,7 @@ background-color: #77797c;
     background-color: #65aef3;
     border: 3px solid #77797c;
     border-radius: 10px;
-    margin: 20px;
+    margin: 10px;
     
     }
 }
@@ -55,6 +55,10 @@ background-color: #77797c;
     padding: 5px;
     display: inline-block;
     font-size: 20px;
+}
+#remark {
+    width: auto;
+    max-width: 275px;
 }
 
 #avtxt {
