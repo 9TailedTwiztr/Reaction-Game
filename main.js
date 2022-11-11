@@ -5,13 +5,13 @@ var startPressed=false;
 var bgChangeStarted=false;
 var maxWait=20;
 var timerID;
-if (localStorage.getItem("Best")=== null) {
-    localStorage.setItem("Best", "1000");
+if (localStorage.getItem("Lowest")=== null) {
+    localStorage.setItem("Lowest", "1000");
     document.getElementById("best").innerText= "0";
     console.log("Set LocalStorage as no previous value")
 }
 window.onload = function() {
-    document.getElementById("best").innerText = localStorage.getItem("Best");
+    document.getElementById("best").innerText = localStorage.getItem("Lowest");
     console.log("Retrieved LocalStorage");
 }
 // function getNewRandomColor()
@@ -64,12 +64,12 @@ function stopTest()
         document.getElementById("Stopbtn").style.display="none";
         document.getElementById("previous").innerHTML= responseTime;
 
-        if (responseTime < parseFloat(localStorage.getItem("Best"))) {
-            localStorage.setItem("Best", responseTime);
+        if (responseTime < parseFloat(localStorage.getItem("Lowest"))) {
+            localStorage.setItem("Lowest", responseTime);
             console.log("Changed LocalStorage \nDisplayed new LocalStorage")
         }
         else {}
-        document.getElementById("best").innerHTML = localStorage.getItem("Best");
+        document.getElementById("best").innerHTML = localStorage.getItem("Lowest");
         
         
 
